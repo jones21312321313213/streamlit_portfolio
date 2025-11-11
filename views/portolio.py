@@ -3,6 +3,29 @@ import pandas as pd
 from contacts import contact
 import base64
 
+
+#
+page_bg = """
+<style>
+[data-testid="stAppViewContainer"] {
+    background-image: url("https://images.unsplash.com/photo-1709990740078-05aa8ee5b9b7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=387");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+[data-testid="stHeader"] {
+    background: rgba(0,0,0,0);
+}
+
+[data-testid="stSidebar"] {
+    background-color: rgba(255,255,255,0.15);
+    backdrop-filter: blur(5px);
+}
+</style>
+"""
+
+st.markdown(page_bg, unsafe_allow_html=True)
 col1, col2 =st.columns(2)
 
 with col1:
@@ -13,13 +36,12 @@ with col2:
     st.write(
         "Currently a 3rd year student at Cebu Institute of Technology - University(CIT-U) taking up the program of Computer Science"
     )
-    
     with st.popover("📧 Contact Me"):
         contact()
 
 
 
-st.subheader("Learned Programming Languages")
+st.subheader("Programming languages learned")
 data = [
     {"name": "C", "image": "assets/c.png"},
     {"name": "C++", "image": "assets/cpp.png"},
