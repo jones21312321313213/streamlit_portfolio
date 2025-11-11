@@ -4,7 +4,6 @@ import numpy as np
 
 
 #st.set_page_config(layout="wide")
-
 page_bg = """
 <style>
 [data-testid="stAppViewContainer"] {
