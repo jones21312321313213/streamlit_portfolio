@@ -60,12 +60,45 @@ for row in data:
         
 
 st.subheader("Projects")
+projects = [
+    {
+        "file": "assets/gamego.png",
+        "url": "https://github.com/jones21312321313213/GameGo",
+        "title": "GAMEGO:",
+        "desc": "Developed a mobile app for gamers to discover,organize, and save favorite games using Firebase and livbe game data from external APIs"
+    },
+    {
+        "file": "assets/stictactics.png",
+        "url": "https://github.com/jones21312321313213/demoGame4OOP",
+        "title": "STICTACTICS:",
+        "desc": "Collaboratively developed a 2-player fighting game using OOP concepts featuring unique characters, special abilities and many arenas."
+    },
+    {
+        "file": "assets/converter.png",
+        "url": "https://github.com/jones21312321313213/CS132-FINAL-PROJECT",
+        "title": "Converter:",
+        "desc": "A lightweight tool built to convert numbers between decimal binary,octal and hexadecimal formats efficiently."
+    },
+    {
+        "file": "assets/assemblygrocery.png",
+        "url": "https://github.com/jones21312321313213/CS243-FINAL-PROJECT",
+        "title": "Grocery Item-list:",
+        "desc": "Designed a terminal-based mini system in x86 Assembly(TASM)implementing basic CRUD operations,user login, and verification logic."
+    }
+]
 
-with open("assets/pizza.png", "rb") as f:
-    data = f.read()
-    b64 = base64.b64encode(data).decode()
-
-st.markdown(
-    f'<a href="https://www.youtube.com" target="_blank"><img src="data:image/png;base64,{b64}" width="200"></a>',
-    unsafe_allow_html=True
-)
+cols_per_row = 2
+for i in range(0, len(projects), cols_per_row):
+    cols = st.columns(cols_per_row)
+    for j, project in enumerate(projects[i:i+cols_per_row]):
+        with open(project["file"], "rb") as f:
+            data = f.read()
+            b64 = base64.b64encode(data).decode()
+        html_code = f'''
+            <h4 style="text-align:center; margin-bottom:5px;">{project["title"]}</h4>
+            <a href="{project["url"]}" target="_blank">
+                <img src="data:image/png;base64,{b64}" width="500" style="border-radius:10px; margin-bottom:5px;">
+            </a>
+            <p style="text-align:center; font-size:12px; color:gray;">{project["desc"]}</p>
+        '''
+        cols[j].markdown(html_code, unsafe_allow_html=True)
