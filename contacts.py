@@ -2,9 +2,10 @@ import streamlit as st
 import re
 import requests
 
-webhook_url = st.secrets["WEBHOOK_URL"]
+webhook_url = st.secrets.get("WEBHOOK_URL")
 
-
+if not webhook_url:
+    st.error("Email service is not set up. Please try again later.")
 
 def is_valid_email(email):
     #Basic regex pattern for email verification
@@ -44,5 +45,5 @@ def contact():
         if response.status_code == 200:
             st.success("Your message has been sent successfully! ")
         else:
-            st.error("There was an erorr sending your message.")
+            st.error(f"Error sending message: {response.status_code} - {response.text}")
              
