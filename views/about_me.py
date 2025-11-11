@@ -34,7 +34,7 @@ if "map_data" not in st.session_state:
     
 one, two, three = st.columns(3)
 with two:
-    st.image("assets/face.jpg", use_container_width=True)
+    st.image("assets/face.jpg", width='stretch')
     
     
 
