@@ -8,7 +8,7 @@ import base64
 page_bg = """
 <style>
 [data-testid="stAppViewContainer"] {
-    background-image: url("https://images.unsplash.com/photo-1709990740078-05aa8ee5b9b7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=387");
+    background-image: url("https://images.unsplash.com/photo-1657216328529-3852a5f372cb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=415");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
